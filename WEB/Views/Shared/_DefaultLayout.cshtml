@@ -1,0 +1,31 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+  @await Html.PartialAsync("~/Views/DefaultPartialView/_HeaderPartialView.cshtml")
+  <body>
+
+<!--header-->
+@await Html.PartialAsync("~/Views/DefaultPartialView/_NavbarPartialView.cshtml")
+<!--/header-->
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section>
+
+<!-- contacts -->
+@RenderBody()
+<!-- //contacts -->
+ <!-- footers 20 -->
+  @await Html.PartialAsync("~/Views/DefaultPartialView/_FooterPartialView.cshtml")
+
+@await Html.PartialAsync("~/Views/DefaultPartialView/_ScriptPartialView.cshtml")
+
+</body>
+
+</html>
+
