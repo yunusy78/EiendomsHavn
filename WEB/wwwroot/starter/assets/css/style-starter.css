@@ -11167,7 +11167,7 @@ a.title-small {
   box-shadow: 0px 9px 24px 5px rgba(0, 0, 0, 0.04); }
 
 .w3l-left-img {
-  background: url(../images/who.jpg) no-repeat center center;
+  background: url(../images/evh5.png) no-repeat center center;
   background-size: cover;
   position: relative;
   border-top-left-radius: var(--border-radius);
@@ -11175,7 +11175,7 @@ a.title-small {
   height: 100%; }
 
 .w3l-left-img1 {
-  background: url(../images/who1.jpg) no-repeat center center;
+  background: url(../images/evh5.png) no-repeat center center;
   background-size: cover;
   position: relative;
   border-top-left-radius: var(--border-radius);
@@ -11183,7 +11183,15 @@ a.title-small {
   height: 100%; }
 
 .w3l-left-img2 {
-  background: url(../images/about1.jpg) no-repeat center center;
+  background: url(../images/evh5.png) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  height: 100%; }
+
+.w3l-left-img3 {
+  background: url(../images/about45.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
   border-top-left-radius: var(--border-radius);
@@ -11191,7 +11199,7 @@ a.title-small {
   height: 100%; }
 
 @media (max-width: 991px) {
-  .w3l-left-img, .w3l-left-img1, .w3l-left-img2 {
+  .w3l-left-img, .w3l-left-img1, .w3l-left-img2 .w3l-left-img3{
     height: 300px;
     border-radius: 0;
     border-top-right-radius: var(--border-radius);
@@ -13391,5 +13399,9 @@ h3.post-content-title {
     margin-bottom: 20px;
     font-size: 28px;
     line-height: 28px; } }
+
+
+
+
 
 /*# sourceMappingURL=style-starter.css.map */

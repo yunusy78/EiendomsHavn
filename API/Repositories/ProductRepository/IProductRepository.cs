@@ -7,7 +7,7 @@ public interface IProductRepository
         
         Task<List<ResultProductDto>> GetAllProductsAsync();
         
-        Task<List<ResultProductDtoWithCategoryAndAddress>> GetAllProductsWithCategoryAndAddressAsync();
+        Task<List<ResultProductDtoWithCategory>> GetAllProductsWithCategoryAsync();
         
         void CreateProductAsync(CreateProductDto productDto);
         

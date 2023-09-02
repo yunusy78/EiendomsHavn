@@ -1,4 +1,7 @@
-﻿<section class="w3l-footers-20">
+﻿
+@await Component.InvokeAsync("Statistic1")
+
+<section class="w3l-footers-20">
     <div class="footers20">
         <div class="container">
             <div class="footers20-content">
@@ -22,9 +25,9 @@
                     <div class="column mt-lg-0 mt-md-5">
                         <h4 class="mb-1">Abonner på nyhetsbrev</h4>
                         <p>og få de siste nyhetene og oppdateringene</p>
-                        <form action="#" class="subscribe-form mt-4" method="post">
+                        <form asp-action="Create" asp-controller="Newsletter" class="subscribe-form mt-4" method="post">
                             <div class="form-group">
-                                <input type="email" name="subscribe" placeholder="Skriv inn din e-post" required="">
+                                <input type="email" name="Email" placeholder="Skriv inn din e-post" required="">
                                 <button class="btn btn-style btn-primary">Abonner</button>
                             </div>
                         </form>
@@ -39,7 +42,7 @@
                 </div>
                 <div class="d-grid grid-col-3 grids-content1 bottom-border">
                     <div class="columns copyright-grid align-self">
-                        <p class="copy-footer-29">© 2020 Eiendomssalg. Alle rettigheter reservert | Designet av <a
+                        <p class="copy-footer-29">© @DateTime.Now.Year Eiendomssalg. Alle rettigheter reservert | Designet av <a
                                 href="https://w3layouts.com">W3layouts</a></p>
                     </div>
                 </div>
@@ -47,7 +50,7 @@
         </div>
     </div>
     <!-- gå til toppen -->
-    <button onclick="toppFunksjon()" id="movetop" title="Gå til toppen">
+    <button onclick="topFunction()" id="movetop" title="Gå til toppen">
         &#10548;
     </button>
      <script>

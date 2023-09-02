@@ -1,0 +1,66 @@
+﻿@model System.Collections.Generic.List<WEB.DTOs.AboutDtos.ResultAboutDto>?
+
+<section class="w3l-index3" id="about">
+<div class="midd-w3 py-5">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="row">
+            <div class="col-lg-5 pr-lg-0">
+                <div class="w3l-left-img3">
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-7 pl-lg-0">
+                    <div class="w3l-right-info">
+                        <h6 class="title-small">Om Oss</h6>
+                        <h3 class="title-big">@item.Title</h3>
+                        <h5 class="mt-4">@item.SubTitle
+                        </h5>
+                        <p class="mt-4">@item.Description</p>
+                        <a href="#small-dialog1" class="popup-with-zoom-anim play-view d-block mt-md-5 mt-4">
+                            <span class="video-play-icon">
+                                <span class="fa fa-play"></span>
+                            </span>
+                        </a>
+                        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                        <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
+                            <iframe src="@item.VideoUrl" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        
+        <div class="grids-area-hny main-cont-wthree-fea row mt-5 pt-lg-5 pt-5">
+            <div class="col-lg-4 col-md-6 grids-feature">
+                <div class="area-box">
+                    <span class="fa fa-home"></span>
+                    <h4><a href="#feature" class="title-head">Utforsk Mulighetene Med Eidomshav</a></h4>
+                    <p>Velkommen til Eidomshav, hvor din reise mot din drømmebolig begynner. Vi er stolte av å være din partner 
+                        i denne spennende oppdagelsesreisen. 
+                        Eidomshav er ikke bare en eiendomsleverandør; vi er din guide til en verden av muligheter innen eiendom.
+                        Vi forstår at din bolig er mer enn bare et sted å bo.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
+                <div class="area-box">
+                    <span class="fa fa-search-plus"></span>
+                    <h4><a href="#feature" class="title-head">Søk som føles kjent</a></h4>
+                    <p>Vårt søkeverktøy er utformet for å gjøre det enkelt og kjent å finne din drømmebolig.
+                        Med våre brukervennlige funksjoner kan du søke etter eiendommer som passer dine behov og preferanser. 
+                        i forstår at søket etter en eiendom kan være en viktig beslutning, og vi er her for å gjøre prosessen så enkel og komfortabel som mulig.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
+                <div class="area-box">
+                    <span class="fa fa-money"></span>
+                    <h4><a href="#feature" class="title-head">Premium verdier</a></h4>
+                    <p>Vi setter høye standarder for vårt arbeid og tjenester. Våre kjerneverdier omfatter kvalitet, pålitelighet og dedikasjon.
+                        Hos oss kan du forvente den høyeste standarden av profesjonalitet og innsats for å sikre at dine eiendomsmål blir oppfylt.
+                        Vi er forpliktet til å levere førsteklasses tjenester som gir deg trygghet og tillit gjennom hele prosessen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

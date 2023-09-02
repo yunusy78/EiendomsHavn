@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "hHpkIhFAgEF6ahbI4/GifHwW+CXApEJI3wuOuvHTZOw=",
-  "Source": "EindomsHavnAPI",
-  "BasePath": "_content/EindomsHavnAPI",
+  "Hash": "bUm1vPqwZHJejLhtNIB7WgmMI8ngxypkYrDApg4MvgQ=",
+  "Source": "API",
+  "BasePath": "_content/API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

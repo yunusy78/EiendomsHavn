@@ -1,0 +1,12 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4f6fff67_002Db534_002D4a37_002Db4a0_002D1b8a001dee8a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;TestProject1&amp;gt; #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1" Presentation="&amp;lt;TestProject1&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59b62f36_002Da2f1_002D4b0e_002Db650_002Dc1c4268ffc1f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAllProductsAsync_ReturnsOkResult" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::29405BB7-1AFC-4389-9BA7-8B6D2E794603::net7.0::ProductControllerTests.GetAllProductsAsync_ReturnsOkResult&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b8bb13c9_002D0607_002D4fad_002D910b_002D3291831a85e3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;TestProject1&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1" Presentation="&amp;lt;TestProject1&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

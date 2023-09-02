@@ -13,6 +13,8 @@ public interface ICategoryRepository
     
     void DeleteCategoryAsync(Guid id);
     
+    
+    
     Task<GetByIdCategoryDto> GetCategoryByIdAsync(Guid id);
     
     

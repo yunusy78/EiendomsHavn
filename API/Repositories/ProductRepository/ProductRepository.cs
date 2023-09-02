@@ -25,12 +25,12 @@ public class ProductRepository: IProductRepository
         
     }
 
-    public async Task<List<ResultProductDtoWithCategoryAndAddress>> GetAllProductsWithCategoryAndAddressAsync()
+    public async Task<List<ResultProductDtoWithCategory>> GetAllProductsWithCategoryAsync()
     {
-        string sql = "SELECT * FROM Products INNER JOIN Categories ON Products.CategoryId = Categories.Id INNER JOIN Addresses ON Products.AddressId = Addresses.Id";
+        string sql = "SELECT * FROM Products INNER JOIN Categories ON Products.CategoryId = Categories.CategoryId ";
         using (var connection = _context.CreateConnection())
         {
-            var products = await connection.QueryAsync<ResultProductDtoWithCategoryAndAddress>(sql);
+            var products = await connection.QueryAsync<ResultProductDtoWithCategory>(sql);
             return products.ToList();
         }
         

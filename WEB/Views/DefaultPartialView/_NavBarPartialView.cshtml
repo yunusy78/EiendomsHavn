@@ -1,45 +1,46 @@
 ﻿<header id="site-header" class="fixed-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg stroke px-0">
-            <h1> <a class="navbar-brand" href="~/starter/index.html">
-                    <span class="fa fa-home"></span> Eiendomshavn
+            
+            <h1>
+                <a class="navbar-brand" href="/Default/Index">
+                     <img style="height: 90px; width: 150px;" src="~/evh3.png" class="img-fluid radius-image" alt="image">
+                    
                 </a></h1>
             <!-- Hvis logoen er et bilde, aktiver dette
-    <a class="navbar-brand" href="#index.html">
-        <img src="image-path" alt="Din logo" title="Din logo" style="height:35px;" />
-    </a> -->
+            <a class="navbar-brand" href="#index.html">
+                <img src="image-path" alt="Din logo" title="Din logo" style="height:35px;" />
+            </a> -->
             <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
-                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                aria-label="Åpne/lukke navigasjon">
+                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Åpne/lukke navigasjon">
                 <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
                 <span class="navbar-toggler-icon fa icon-close fa-times"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ml-lg-5 mr-auto">
+                      <li class="nav-item @@home__active">
+                      <a class="navbar-brand" href="/Default/Index"><span class="fa fa-home"></span> </a>
+                       </li>
                     <li class="nav-item @@home__active">
-                        <a class="nav-link" href="~/starter/index.html">Hjem <span class="sr-only">(nåværende)</span></a>
+                        <a class="nav-link" href="/Default/Index">Hjem <span class="sr-only">(nåværende)</span></a>
                     </li>
                     <li class="nav-item @@listing__active">
-                        <a class="nav-link" href="~/starter/listing.html">Annonser</a>
+                        <a class="nav-link" href="/ProductDetails/Index">Annonser</a>
                     </li>
                     <li class="nav-item dropdown @@property__active">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Eiendom <span class="fa fa-angle-down"></span>
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Eiendom
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item @@ps__active" href="~/starter/property-single.html">Enkelt eiendom</a>
-                        </div>
                     </li>
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sider <span class="fa fa-angle-down"></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item @@about__active" href="~/starter/about.html">Om oss</a>
-                            <a class="dropdown-item active" href="~/starter/contact.html">Kontakt oss</a>
+                            <a class="dropdown-item @@about__active" href="/About/Index">Om oss</a>
+                            <a class="dropdown-item active" href="/Contact/Index">Kontakt oss</a>
                         </div>
                     </li>
                 </ul>

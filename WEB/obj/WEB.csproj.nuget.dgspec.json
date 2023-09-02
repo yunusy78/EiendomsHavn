@@ -57,6 +57,14 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -68,6 +76,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[9.0.0-prerelease, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[9.0.0-prerelease, )"
             }
           },
           "imports": [

@@ -61,9 +61,21 @@
               "target": "Package",
               "version": "[7.0.9, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.1-pre.26, )"
+            },
+            "xunit.core": {
+              "target": "Package",
+              "version": "[2.5.1-pre.26, )"
             }
           },
           "imports": [

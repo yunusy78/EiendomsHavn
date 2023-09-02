@@ -31,7 +31,7 @@ namespace EindomsHavnAPI.Controllers
         [Route("GetAllProductsWithCategoryAndAddress")]
         public async Task<IActionResult> GetAllProductsWithCategoryAndAddressAsync()
         {
-            var products = await _productRepository.GetAllProductsWithCategoryAndAddressAsync();
+            var products = await _productRepository.GetAllProductsWithCategoryAsync();
             return Ok(products);
             
         }

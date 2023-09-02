@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WEB.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\Ehavn.png",
+      "PackagePath": "staticwebassets\\Ehavn.png"
+    },
+    {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -509,6 +513,14 @@
       "PackagePath": "staticwebassets\\dashmin-1.0.0\\widget.html"
     },
     {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\ehv2.png",
+      "PackagePath": "staticwebassets\\ehv2.png"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\evh3.png",
+      "PackagePath": "staticwebassets\\evh3.png"
+    },
+    {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -789,8 +801,16 @@
       "PackagePath": "staticwebassets\\starter\\assets\\images\\about.jpg"
     },
     {
-      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\about1.jpg",
-      "PackagePath": "staticwebassets\\starter\\assets\\images\\about1.jpg"
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\about3.jpg",
+      "PackagePath": "staticwebassets\\starter\\assets\\images\\about3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\about4.jpg",
+      "PackagePath": "staticwebassets\\starter\\assets\\images\\about4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\about45.jpg",
+      "PackagePath": "staticwebassets\\starter\\assets\\images\\about45.jpg"
     },
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\banner.jpg",
@@ -823,6 +843,14 @@
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\down.png",
       "PackagePath": "staticwebassets\\starter\\assets\\images\\down.png"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\ehv2.png",
+      "PackagePath": "staticwebassets\\starter\\assets\\images\\ehv2.png"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\evh5.png",
+      "PackagePath": "staticwebassets\\starter\\assets\\images\\evh5.png"
     },
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\l1.jpg",

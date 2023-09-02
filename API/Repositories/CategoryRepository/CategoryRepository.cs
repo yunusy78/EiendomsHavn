@@ -41,9 +41,9 @@ public class CategoryRepository : ICategoryRepository
     
 public async void UpdateCategoryAsync(UpdateCategoryDto categoryDto)
     {
-        string sql = "UPDATE Categories SET Name = @Name, Description = @Description, ImageUrl = @ImageUrl, Status = @Status WHERE Id = @Id";
+        string sql = "UPDATE Categories SET Name = @Name, Description = @Description, ImageUrl = @ImageUrl, Status = @Status WHERE CategoryId = @CategoryId";
         var parameters = new DynamicParameters();
-        parameters.Add("@Id", categoryDto.Id, DbType.Guid);
+        parameters.Add("@CategoryId", categoryDto.CategoryId, DbType.Guid);
         parameters.Add("@Name", categoryDto.Name, DbType.String);
         parameters.Add("@Description", categoryDto.Description, DbType.String);
         parameters.Add("@ImageUrl", categoryDto.ImageUrl, DbType.String);
@@ -56,9 +56,9 @@ public async void UpdateCategoryAsync(UpdateCategoryDto categoryDto)
 
 public async void DeleteCategoryAsync(Guid id)
 {
-    string sql = "DELETE FROM Categories WHERE Id = @Id";
+    string sql = "DELETE FROM Categories WHERE CategoryId = @CategoryId";
     var parameters = new DynamicParameters();
-    parameters.Add("@Id", id, DbType.Guid);
+    parameters.Add("@CategoryId", id, DbType.Guid);
     using (var connection = _context.CreateConnection())
     {
         await connection.ExecuteAsync(sql, parameters);
@@ -67,11 +67,11 @@ public async void DeleteCategoryAsync(Guid id)
 
 public async Task<GetByIdCategoryDto> GetCategoryByIdAsync(Guid id)
 {
-   string sql = "SELECT * FROM Categories WHERE Id = @Id";
+   string sql = "SELECT * FROM Categories WHERE CategoryId = @CategoryId";
    
    var parameters = new DynamicParameters();
    
-   parameters.Add("@Id", id, DbType.Guid);
+   parameters.Add("@CategoryId", id, DbType.Guid);
 
    using (var connection = _context.CreateConnection())
    {

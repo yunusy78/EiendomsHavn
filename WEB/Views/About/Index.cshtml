@@ -1,0 +1,56 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_DefaultLayout";
+}
+
+
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="index.html">Hjem</a></li>
+            <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> Sider</li>
+            <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> Om Oss</li>
+        </ul>
+    </div>
+</section>
+
+@await Component.InvokeAsync("AboutComponent")
+
+
+<section class="w3l-aboutblock2" id="why">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="row">
+                <div class="col-lg-6 left-wthree-img">
+                    <img src="~/starter/assets/images/about3.jpg" alt="" class="img-fluid radius-image" />
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-5 align-self">
+                    <h6 class="title-small">Hvorfor velge oss?</h6>
+                    <h3 class="title-big">For å hjelpe medlemmene å bli mer lønnsomme og vellykkede.</h3>
+                    <p class="mt-4">Vi er her for å hjelpe medlemmene våre med å oppnå større lønnsomhet og suksess. 
+                        Med over 15 års erfaring innenfor forretningskonsultasjon, har vi kompetansen til å veilede deg gjennom viktige beslutninger.
+                    </p>
+                    <ul class="w3l-right-book mt-lg-5 mt-4">
+                        <p class="mt-4">Vårt mål er enkelt:</p>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>Å hjelpe selgere med å få mest mulig ut av sine eiendommer.</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>Å hjelpe selgere med å sette en rettferdig pris på sine eiendommer.</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>Å hjelpe kjøpere med å finne den eiendommen som passer deres behov.</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>Å unngå overbetaling ved å forhandle strategisk ved kjøp.</li>
+                        <p class="mt-4">Med vårt dedikerte team og ekspertise er vi her for å gjøre din eiendomserfaring enklere og mer givende. 
+                            Velg oss for å oppnå dine eiendomsmål.</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@await Component.InvokeAsync("OurTeamComponent")
+<!-- stats -->

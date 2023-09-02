@@ -1,4 +1,5 @@
-﻿<div class="w3l-news" id="news">
+﻿@using System.Globalization
+<div class="w3l-news" id="news">
     <section id="grids5-block" class="py-5">
         <div class="container py-lg-5 py-md-4 py-2">
             <h3 class="title-big text-center">Tips og Råd</h3>
@@ -7,9 +8,9 @@
                     <div class="grids5-info">
                         <span class="posted-date">
                             <a href="#blog-single">
-                                <span class="small">2020</span>
-                                <span class="big">16</span>
-                                <span class="small">Oktober</span>
+                                <span class="small">@DateTime.Now.Year</span>
+                                <span class="big">@DateTime.Now.Day</span>
+                                <span class="small">@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Now.Month)</span>
                             </a>
                         </span>
                         <a href="#blog-single" class="d-block zoom">
@@ -27,9 +28,9 @@
                     <div class="grids5-info">
                         <span class="posted-date">
                             <a href="#blog-single">
-                                <span class="small">2020</span>
-                                <span class="big">19</span>
-                                <span class="small">Oktober</span>
+                                <span class="small">@DateTime.Now.Year</span>
+                                <span class="big">@DateTime.Now.AddDays(-1).Day</span>
+                                <span class="small">@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Now.Month)</span>
                             </a>
                         </span>
                         <a href="#blog-single" class="d-block zoom">

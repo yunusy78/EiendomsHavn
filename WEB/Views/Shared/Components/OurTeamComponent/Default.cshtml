@@ -1,0 +1,35 @@
+﻿@model System.Collections.Generic.List<WEB.DTOs.AboutDtos.ResultEmployeeDto>?
+
+<div class="w3l-agentsblock py-5" id="team">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <h6 class="title-small text-center">Our team</h6>
+        <h3 class="title-big text-center mb-lg-5 mb-4">Meet our Agents</h3>
+        <!-- block -->
+        <div class="row">
+            @foreach(var employee in Model)
+            {
+            <div class="col-lg-3 col-sm-6 column-item">
+                <div class="users_box">
+                    <div class="user-avatar">
+                        <a href="#agent-single" class="avatar">
+                            <img src="@employee.EmployeeImageUrl" alt="" class="img-fluid w-100 radius-image">
+                        </a>
+                    </div>
+                    <div class="users_box_info">
+                        <p class="user_position">@employee.EmployeeTitle</p>
+                        <h4 class="user_title agent">
+                            <a href="#agent-single">@employee.EmployeeName</a>
+                        </h4>
+                        <div class="user_meta user_phone">
+                            <span class="phone-detail"> <a href="tel:+1-2345-678-11">@employee.EmployeePhoneNumber</a></span>
+                        </div>
+                        <a href="#agent-single" class="btn btn-outline-primary btn-style mt-4">Ta Kontakt</a>
+
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
