@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AnKfl1C+evb4qHcRrhTp4fwjcYvZXuDQLTV+u0ts6KP+1v/XJQbFxa44UZk3OP1F+ijTCMkH3vnM9xFmI38M+Q==",
+  "dgSpecHash": "wLeZwMN5EXZg7FEquJA9x0cZSYuRHdXeIJ6ZRP0P8Ba8fUWAvSCQq4Gl4P4p42E0CPKHRgyjf/WswIRoDWAvvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\TestProject1\\TestProject1.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\yunus\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

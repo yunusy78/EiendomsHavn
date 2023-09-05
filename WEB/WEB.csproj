@@ -22,6 +22,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.10" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0"/>
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.0" />
+        <PackageReference Include="QRCoder" Version="1.4.3" />
         <PackageReference Include="X.PagedList" Version="9.0.0-prerelease" />
         <PackageReference Include="X.PagedList.Mvc.Core" Version="9.0.0-prerelease" />
     </ItemGroup>
@@ -49,7 +50,10 @@
 
 
     <ItemGroup>
+      <Folder Include="Areas\Admin\Data\" />
+      <Folder Include="Areas\Admin\Pages\" />
       <Folder Include="Pages\Components\" />
+      <Folder Include="wwwroot\ImageFile\Product\" />
     </ItemGroup>
 
 </Project>

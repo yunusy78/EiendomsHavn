@@ -9,6 +9,22 @@
       "PackagePath": "staticwebassets\\Ehavn.png"
     },
     {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\ImageFile\\Product\\2d69f5f9-0f35-4689-9d27-cabb25a55707.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\Product\\2d69f5f9-0f35-4689-9d27-cabb25a55707.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\ImageFile\\Product\\69cfd8bf-67ce-4ff5-a766-fd3247f89d84.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\Product\\69cfd8bf-67ce-4ff5-a766-fd3247f89d84.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\ImageFile\\Product\\7303e4e3-de8b-43c1-8f98-b8c77b7caea0.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\Product\\7303e4e3-de8b-43c1-8f98-b8c77b7caea0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\ImageFile\\Product\\74fac78b-6484-4522-9879-161a22b33045.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\Product\\74fac78b-6484-4522-9879-161a22b33045.jpg"
+    },
+    {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -793,6 +809,14 @@
       "PackagePath": "staticwebassets\\starter\\assets\\images\\404.svg"
     },
     {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\Anonce\\krist.jpg",
+      "PackagePath": "staticwebassets\\starter\\assets\\images\\Anonce\\krist.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\Anonce\\tronheim.jpg",
+      "PackagePath": "staticwebassets\\starter\\assets\\images\\Anonce\\tronheim.jpg"
+    },
+    {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\assets\\images\\Villa1.jpg",
       "PackagePath": "staticwebassets\\starter\\assets\\images\\Villa1.jpg"
     },
@@ -999,6 +1023,46 @@
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\6.jpg",
       "PackagePath": "staticwebassets\\starter\\images\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\Kristiansand.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\Kristiansand.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\Tromso.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\Tromso.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\Trondheim.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\Trondheim.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\bergen.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\bergen.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\bodo.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\bodo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\frederikstad.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\frederikstad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\molde.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\molde.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\oslo.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\oslo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\stavenger.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\stavenger.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\images\\City\\Ålesund.jpg",
+      "PackagePath": "staticwebassets\\starter\\images\\City\\Ålesund.jpg"
     },
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\wwwroot\\starter\\index.html",

@@ -77,6 +77,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.3, )"
+            },
             "X.PagedList": {
               "target": "Package",
               "version": "[9.0.0-prerelease, )"

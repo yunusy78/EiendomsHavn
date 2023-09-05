@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "R1O3hBJsMPE+LUIg73ibVzIIjiH2RAWnbhEbTAKJev2iWJRmDoOA5OjJWtIVAa6G3fz3TpH2UJ/T7I9bl1izMA==",
+  "dgSpecHash": "J55JkrvpPkYf/O3hmV0N5BsQdnntkTtwhANhegcCo2inaDQNwYMWbpdQHTUoCwNJl8FyYTl1deK4xMogwkOzIA==",
   "success": true,
   "projectFilePath": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\yunus\\.nuget\\packages\\azure.identity\\1.8.0\\azure.identity.1.8.0.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

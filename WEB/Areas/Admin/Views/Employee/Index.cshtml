@@ -1,0 +1,83 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<WEB.DTOs.AboutDtos.ResultEmployeeDto>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+<br/>
+<br/>
+<br/>
+<h2 style="text-align: center">Employee Index</h2>
+<br/>
+<table class="table">
+    <thead style="text-align: center">
+    <tr>
+        <th>#</th>
+        <th>Id</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <tr>
+            <td>@(i + 1)</td>
+            <td>@Model[i].EmployeeId</td>
+            <td>
+                <img src="@Model[i].EmployeeImageUrl" alt="Image" style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;">
+            </td>
+            
+
+            <td>@Model[i].EmployeeName</td>
+            <td>@Model[i].EmployeeTitle</td>
+            <td>@Model[i].EmployeeEmail</td>
+            <td>@Model[i].EmployeePhoneNumber</td>
+            <td>    
+                @if (Model[i].EmployeeStatus)
+                {
+                    <span class="text-success">Active</span>
+                }
+                else
+                {
+                    <span class="text-danger">Inactive</span>
+                }
+            </td>
+            <td>
+            <button type="button" class="btn btn-primary" onclick="editCategory('@Model[i].EmployeeId')"> <i class="fa fa-edit"></i> Edit</button>
+            </td>
+           <td>
+               <button type="submit" class="btn btn-danger" onclick="return confirmDelete('@Model[i].EmployeeId')"><i class="fa fa-trash"></i> Delete</button>
+               </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", "Employee", new { area = "Admin", page }))
+<a href="/Admin/Employee/Create" class="btn btn-primary">
+    <i class="fa fa-plus"></i> Add New Employee
+</a>
+<!-- Path: BlogWeb\Areas\Admin\Views\Category\Create.cshtml --> 
+<script>
+ function editCategory(categoryId) {
+       
+        window.location.href = "/Admin/Employee/Update/" + categoryId;
+    }
+    function confirmDelete(categoryId) {
+        var confirmMessage = "Are you sure you want to delete this category?";
+        if (confirm(confirmMessage)) {
+            window.location.href = "/Admin/Employee/Delete/" + categoryId;
+        }
+        return false;
+    }
+</script>
+

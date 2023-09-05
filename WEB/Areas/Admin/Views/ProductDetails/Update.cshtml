@@ -1,0 +1,57 @@
+﻿@model EindomsHavn.DTOs.ProductDtos.GetByIdProductDetailsDto
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<div class="container">
+    <h1>Update Product Details</h1>
+    <form asp-area="Admin" asp-controller="ProductDetails" asp-action="Update" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ProductId" />
+
+        <div class="form-group">
+            <label asp-for="Size"></label>
+            <input asp-for="Size" class="form-control" />
+        </div>
+        <br/>
+ 
+        <div class="form-group">
+            <label asp-for="RomCount"></label>
+            <input asp-for="RomCount" class="form-control" required />
+        </div>
+   <br/>
+        <div class="form-group">
+            <label asp-for="BathCount"></label>
+            <input asp-for="BathCount" class="form-control" />
+        </div>
+   <br/>
+        <div class="form-group">
+            <label asp-for="BadromCount"></label>
+            <input asp-for="BadromCount" class="form-control" required />
+        </div>
+   <br/>
+        <div class="form-group">
+            <label asp-for="GarageSize"></label>
+            <input asp-for="GarageSize" class="form-control" />
+        </div>
+   <br/>
+        <div class="form-group">
+            <label asp-for="Location"></label>
+            <input asp-for="Location" class="form-control" required />
+        </div>
+   <br/>
+        <div class="form-group">
+            <label asp-for="BuildYear"></label>
+            <input asp-for="BuildYear" class="form-control" />
+        </div>
+   <br/>
+        <div class="form-group">
+            <label asp-for="VideoUrl"></label>
+            <input asp-for="VideoUrl" class="form-control" required />
+        </div>
+   <br/>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> Update</button>
+    </form>
+</div>

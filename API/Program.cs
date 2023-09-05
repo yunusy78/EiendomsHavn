@@ -1,6 +1,7 @@
 using EindomsHavnAPI.Data.Context;
 using EindomsHavnAPI.Repositories.AboutRepository;
 using EindomsHavnAPI.Repositories.CategoryRepository;
+using EindomsHavnAPI.Repositories.CityRepository;
 using EindomsHavnAPI.Repositories.ContactRepository;
 using EindomsHavnAPI.Repositories.EmployeeRepository;
 using EindomsHavnAPI.Repositories.NewsletterRepository;
@@ -17,6 +18,7 @@ builder.Services.AddTransient<IContactRepository, ContactRepository>();
 builder.Services.AddTransient<IProductDetailsRepository, ProductDetailsRepository>();
 builder.Services.AddTransient<IAboutRepository, AboutRepository>();
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddTransient<ICityRepository, CityRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

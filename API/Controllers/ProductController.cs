@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EindomsHavnAPI.DTOs.ProductDtos;
 using EindomsHavnAPI.Repositories.ProductRepository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,21 @@ namespace EindomsHavnAPI.Controllers
             var products = await _productRepository.GetAllProductsWithCategoryAsync();
             return Ok(products);
             
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> CreateProductAsync(CreateProductDto productDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            productDto.Status = true;
+            productDto.CreatedAt = DateTime.Now;
+            
+             _productRepository.CreateProductAsync(productDto);
+             
+            return Ok("Product Created Successfully");
         }
         
         

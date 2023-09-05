@@ -18,6 +18,8 @@ public interface IProductDetailsRepository
         Task<GetByIdProductDetailsDto> GetProductByIdAsync(Guid id);
         
         Task<List<ResultProductDetailsDtoWithProduct>> GetAllProductDetailsWithProductAsync(Guid id);
+        
+        Task<List<GetByIdProductDetailsDto>> GetByIdProductDetailsAsync(Guid id);
     
     
     

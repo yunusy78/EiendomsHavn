@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.ValidationRules;
 using EindomsHavnAPI.DTOs.CategoryDtos;
 using EindomsHavnAPI.Repositories.CategoryRepository;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,10 +34,15 @@ namespace EindomsHavnAPI.Controllers
         
         public async Task<IActionResult> CreateCategory(CreateCategoryDto categoryDto)
         {
-            if (!ModelState.IsValid)
+            CategoryValidator validator = new CategoryValidator();
+            ValidationResult result = validator.Validate(categoryDto);
+            
+            
+            if (!result.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            
             categoryDto.CreatedAt = DateTime.Now;
             _categoryRepository.CreateCategoryAsync(categoryDto);
             return Ok("Category Created Successfully");
@@ -51,6 +58,7 @@ namespace EindomsHavnAPI.Controllers
             _categoryRepository.UpdateCategoryAsync(categoryDto);
             return Ok("Category Updated Successfully");
         }
+        
         
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(Guid id)

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WEB.DTOs.ProductDtos;
+using System.Linq;
 
 namespace WEB.ViewComponent.Default;
 
@@ -23,7 +24,7 @@ public class DefaultProductList : Microsoft.AspNetCore.Mvc.ViewComponent
         if (response.IsSuccessStatusCode)
         {
             var result = await response.Content.ReadAsStringAsync();
-            var products = JsonConvert.DeserializeObject<List<ResultProductDto>>(result);
+            var products = JsonConvert.DeserializeObject<List<ResultProductDto>>(result).Take(9);
             return View(products);
         }
         

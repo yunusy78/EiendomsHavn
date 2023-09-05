@@ -251,3 +251,4 @@ C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\API\
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\API\bin\Debug\net7.0\xunit.assert.dll
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\API\bin\Debug\net7.0\xunit.core.dll
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\API\bin\Debug\net7.0\xunit.execution.dotnet.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\API\bin\Debug\net7.0\FluentValidation.dll
