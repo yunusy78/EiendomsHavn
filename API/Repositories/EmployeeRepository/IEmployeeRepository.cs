@@ -7,7 +7,7 @@ public interface IEmployeeRepository
 {
     Task<IEnumerable<ResultEmployeeDto>> GetAllEmployeeAsync();
     Task<ResultEmployeeDto> GetEmployeeByIdAsync(Guid id);
-    //Task<ResultAboutDto> CreateAboutAsync(CreateAboutDto createAboutDto);
-    //Task<ResultAboutDto> UpdateAboutAsync(Guid id, UpdateAboutDto updateAboutDto);
-    Task<bool> DeleteEmployeeAsync(Guid id);
+    void  CreateAboutAsync(CreateEmployeeDto createAboutDto);
+    void  UpdateAboutAsync(UpdateEmployeeDto updateAboutDto);
+    void DeleteCategoryAsync(Guid id);
 }

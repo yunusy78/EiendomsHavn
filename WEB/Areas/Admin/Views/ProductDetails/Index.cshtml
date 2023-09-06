@@ -5,6 +5,7 @@
 @{
     ViewBag.Title = "title";
     Layout = "_AdminLayout";
+    int j=0;
 }
 
 <!DOCTYPE html>
@@ -23,61 +24,64 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover dataTables-example">
                                 <thead style="background: #0dcaf0">
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>ProductId</th>
-                                        <th>Title</th>
-                                        <th>Price</th>
-                                        <th>Type</th>
-                                        <th>City</th>
-                                        <th>Country</th>
-                                        <th>Street</th>
-                                        <th>VideoUrl</th>
-                                        <th>Size</th>
-                                        <th>BuildYear</th>
-                                        <th>GarageSize</th>
-                                        <th>RomCount</th>
-                                        <th>BathCount</th>
-                                        <th>BadromCount</th>
-                                        <th>CategoryName</th>
-                                        <th>EmployeeName</th>
-                                        <th>EmployeeEmail</th>
-                                        <th>Action</th>
-                                         <th>Action</th>
-                                        <th>Action</th>
-                                    </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Id</th>
+                                    <th>ProductId</th>
+                                    <th>Title</th>
+                                    <th>Price</th>
+                                    <th>Type</th>
+                                    <th>City</th>
+                                    <th>Country</th>
+                                    <th>Street</th>
+                                    <th>VideoUrl</th>
+                                    <th>Size</th>
+                                    <th>BuildYear</th>
+                                    <th>GarageSize</th>
+                                    <th>RomCount</th>
+                                    <th>BathCount</th>
+                                    <th>BadromCount</th>
+                                    <th>CategoryName</th>
+                                    <th>EmployeeName</th>
+                                    <th>EmployeeEmail</th>
+                                    <th>Action</th>
+                                    <th>Action</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var product in Model)
-                                    {
-                                        <tr>
-                                            <td>@product.Id</td>
-                                            <td>@product.ProductId</td>
-                                            <td>@product.Title</td>
-                                            <td>@product.Price</td>
-                                            <td>@product.Type</td>
-                                            <td>@product.City</td>
-                                            <td>@product.Country</td>
-                                            <td>@product.Street</td>
-                                            <td>@product.VideoUrl</td>
-                                            <td>@product.Size</td>
-                                            <td>@product.BuildYear</td>
-                                            <td>@product.GarageSize</td>
-                                            <td>@product.RomCount</td>
-                                            <td>@product.BathCount</td>
-                                            <td>@product.BadromCount</td>
-                                            <td>@product.Name</td>
-                                            <td>@product.EmployeeName</td>
-                                            <td>@product.EmployeeEmail</td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary" onclick="editproduct('@product.Id')"> <i class="fa fa-edit"></i> Edit</button>
-                                            </td>
-                                            <td>
-                                                <button type="submit" class="btn btn-danger" onclick="return confirmDelete('@product.Id')"><i class="fa fa-trash"></i> Delete</button>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                    }
+                                
+                                @foreach (var product in Model)
+                                {
+                                    <tr>
+                                        @{j++;} 
+                                        <td><strong>@j</strong></td>
+                                        <td>@product.Id</td>
+                                        <td>@product.ProductId</td>
+                                        <td>@product.Title</td>
+                                        <td>@product.Price</td>
+                                        <td>@product.Type</td>
+                                        <td>@product.City</td>
+                                        <td>@product.Country</td>
+                                        <td>@product.Street</td>
+                                        <td>@product.VideoUrl</td>
+                                        <td>@product.Size</td>
+                                        <td>@product.BuildYear</td>
+                                        <td>@product.GarageSize</td>
+                                        <td>@product.RomCount</td>
+                                        <td>@product.BathCount</td>
+                                        <td>@product.BadromCount</td>
+                                        <td>@product.Name</td>
+                                        <td>@product.EmployeeName</td>
+                                        <td>@product.EmployeeEmail</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" onclick="editproduct('@product.Id')"> <i class="fa fa-edit"></i> Edit</button>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-danger" onclick="return confirmDelete('@product.Id')"><i class="fa fa-trash"></i> Delete</button>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                }
                                 </tbody>
                             </table>
                         </div>
@@ -89,9 +93,15 @@
 
 </body>
 </html>
+<div class="btn-group me-2" role="group" aria-label="First group">
+               
+                    @for (var i = 1; i <= Model.PageCount; i++)
+                    {
+                        <button type="button" class="btn btn-primary @(i == Model.PageNumber ? "current" : "")" style="background-color: @(i == Model.PageNumber ? "#0dcaf0" : "White"); color: #0b0b0b" onclick="location.href='@Url.Action("Index", "ProductDetails", new { area = "Admin", page = i })'">@i</button>
 
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", "ProductDetails", new { area = "Admin", page }))
-
+                    }
+               
+            </div>
 <script>
  function editproduct(Id) {
        

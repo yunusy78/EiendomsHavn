@@ -1,0 +1,47 @@
+﻿@model EiendomsHavn.DTOs.CategoryDtos.CreateCategoryDto
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<html>
+<head>
+    <title>Legg til nytt produkt</title>
+    <style>
+        .custom-form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h3 class="text-center">Legg til nytt Category</h3>
+            <form asp-controller="Category" asp-action="Create" asp-area="Admin" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input asp-for="Name" class="form-control" placeholder="CategoryName" required>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input asp-for="CategoryDescription" class="form-control" placeholder="Beskrivelse" required>
+                    <span asp-validation-for="CategoryDescription" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Lagre</button>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

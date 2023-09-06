@@ -26,11 +26,10 @@ public class CategoryRepository : ICategoryRepository
 
     public async void CreateCategoryAsync(CreateCategoryDto categoryDto)
     {
-        string sql = "INSERT INTO Categories (Name, CategoryDescription, ImageUrl, CreatedAt , Status  ) VALUES (@Name, @CategoryDescription, @ImageUrl, @CreatedAt, @Status)";
+        string sql = "INSERT INTO Categories (Name, CategoryDescription, CreatedAt , Status  ) VALUES (@Name, @CategoryDescription, @CreatedAt, @Status)";
         var parameters = new DynamicParameters();
         parameters.Add("@Name", categoryDto.Name, DbType.String);
         parameters.Add("@CategoryDescription", categoryDto.CategoryDescription, DbType.String);
-        parameters.Add("@ImageUrl", categoryDto.ImageUrl, DbType.String);
         parameters.Add("@CreatedAt", categoryDto.CreatedAt, DbType.DateTime);
         parameters.Add("@Status",  true);
         using (var connection = _context.CreateConnection())
@@ -41,12 +40,11 @@ public class CategoryRepository : ICategoryRepository
     
 public async void UpdateCategoryAsync(UpdateCategoryDto categoryDto)
     {
-        string sql = "UPDATE Categories SET Name = @Name, CategoryDescription = @CategoryDescription, ImageUrl = @ImageUrl, Status = @Status WHERE CategoryId = @CategoryId";
+        string sql = "UPDATE Categories SET Name = @Name, CategoryDescription = @CategoryDescription, Status = @Status WHERE CategoryId = @CategoryId";
         var parameters = new DynamicParameters();
         parameters.Add("@CategoryId", categoryDto.CategoryId, DbType.Guid);
         parameters.Add("@Name", categoryDto.Name, DbType.String);
         parameters.Add("@CategoryDescription", categoryDto.CategoryDescription, DbType.String);
-        parameters.Add("@ImageUrl", categoryDto.ImageUrl, DbType.String);
         parameters.Add("@Status",  categoryDto.Status, DbType.Boolean);
         using (var connection = _context.CreateConnection())
         {

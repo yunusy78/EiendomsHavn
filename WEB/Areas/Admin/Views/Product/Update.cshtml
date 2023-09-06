@@ -1,0 +1,95 @@
+﻿@model EiendomsHavn.DTOs.ProductDtos.CreateProductDto
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+
+<html>
+<head>
+    <title>Legg til nytt produkt</title>
+    <style>
+        .custom-form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h3 class="text-center">Opdater produkt</h3>
+            <form asp-controller="Product" asp-action="Update" asp-area="Admin" method="post" enctype="multipart/form-data">
+                <input asp-for="ProductId" class="form-control" type="hidden">
+                <div class="form-group">
+                    <input asp-for="Title" class="form-control" placeholder="Tittel" required>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <textarea asp-for="Description" class="form-control" placeholder="Beskrivelse" rows="4" required> </textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="Type">Type:</label>
+                    <select asp-for="Type"  class="form-control">
+                        <option value="Til Salgs">Til Salgs</option>
+                        <option value="Til Leie">Til Leie</option>
+                    </select>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input asp-for="Price" class="form-control" placeholder="Pris" type="number">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input asp-for="Street" class="form-control" placeholder="Gate">
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input asp-for="City" class="form-control" placeholder="By">
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input asp-for="PostalCode" class="form-control" placeholder="Postnummer">
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input asp-for="Country" class="form-control" placeholder="Land">
+                </div>
+                <br/>
+                <div class="mb-3">
+                    <label>ImageUrl</label>
+                    <input type="file" id="uploadBox" name="file1" class="form-control"/>
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+                 <input asp-for="ImageUrl" class="form-control" type="hidden">
+                <div class="mb-3">
+                    <label>CoverImageUrl</label>
+                    <input type="file" id="uploadBox" name="file2" class="form-control"/>
+                </div>
+                 <input asp-for="CoverImageUrl" class="form-control" type="hidden">
+                <br/>
+                 <input asp-for="CategoryId" class="form-control" type="hidden">
+                <br/>
+                <input asp-for="EmployeeId" class="form-control" type="hidden">
+                  <input asp-for="CreatedAt" class="form-control" type="hidden">
+                <br/>
+                 <input asp-for="Status" class="form-control" type="hidden">
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Lagre</button>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

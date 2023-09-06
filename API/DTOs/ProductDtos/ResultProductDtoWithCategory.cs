@@ -12,7 +12,7 @@ public class ResultProductDtoWithCategory
     public string? City { get; set; }
     
     public string? PostalCode { get; set; }
-    
+    public bool Status { get; set; }
     public string? Country { get; set; }
     public string ImageUrl { get; set; }
     public DateTime CreatedAt { get; set; }

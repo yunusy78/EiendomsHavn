@@ -10,7 +10,7 @@
 <h2 style="text-align: center">Category Index</h2>
 <br/>
 <table class="table">
-    <thead style="text-align: center">
+    <thead style="text-align: center; background: #0dcaf0">
     <tr>
         <th>#</th>
         <th>Id</th>
@@ -26,7 +26,7 @@
     @for (int i = 0; i < Model.Count; i++)
     {
         <tr>
-            <td>@(i + 1)</td>
+            <td><strong>@(i + 1)</strong></td>
             <td>@Model[i].CategoryId</td>
             <td>@Model[i].Name</td>
             <td>@Model[i].CategoryDescription</td>
@@ -53,12 +53,22 @@
     </tbody>
 </table>
 
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", "Category", new { area = "Admin", page }))
+<div class="btn-group me-2" role="group" aria-label="First group">
+               
+    @for (var i = 1; i <= Model.PageCount; i++)
+    {
+        <button type="button" class="btn btn-primary @(i == Model.PageNumber ? "current" : "")" style="background-color: @(i == Model.PageNumber ? "#0dcaf0" : "White"); color: #0b0b0b" onclick="location.href='@Url.Action("Index", "Category", new { area = "Admin", page = i })'">@i</button>
 
+    }
+               
+</div>
+<br/>
+<br/>
+<div>
 <a href="/Admin/Category/Create" class="btn btn-primary">
     <i class="fa fa-plus"></i> Add New Category
 </a>
-
+</div>
 <!-- Path: BlogWeb\Areas\Admin\Views\Category\Create.cshtml --> 
 <script>
  function editCategory(categoryId) {

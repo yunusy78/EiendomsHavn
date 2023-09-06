@@ -52,6 +52,34 @@ namespace EindomsHavnAPI.Controllers
             return Ok("Product Created Successfully");
         }
         
+        [HttpPut]
+        public async Task<IActionResult> UpdateProductAsync(UpdateProductDto productDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
+            _productRepository.UpdateProductAsync(productDto);
+            
+            return Ok("Product Updated Successfully");
+        }
+        
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProductAsync(Guid id)
+        {
+            _productRepository.DeleteProductAsync(id);
+            return Ok("Product Deleted Successfully");
+        }
+        
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetProductByIdAsync(Guid id)
+        {
+            var product = await _productRepository.GetProductByIdAsync(id);
+            return Ok(product);
+        }
+        
+        
         
         
     }

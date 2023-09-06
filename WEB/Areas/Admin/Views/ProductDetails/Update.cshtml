@@ -5,53 +5,78 @@
     Layout = "_AdminLayout";
 }
 
-<div class="container">
-    <h1>Update Product Details</h1>
-    <form asp-area="Admin" asp-controller="ProductDetails" asp-action="Update" method="post">
-        <input type="hidden" asp-for="Id" />
-        <input type="hidden" asp-for="ProductId" />
 
-        <div class="form-group">
-            <label asp-for="Size"></label>
-            <input asp-for="Size" class="form-control" />
+<html>
+<head>
+    <title>Legg til nytt produkt</title>
+    <style>
+        .custom-form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <div class="text-center">
+                <h3>Update Product Details</h3>
+               </div> 
+            <form asp-area="Admin" asp-controller="ProductDetails" asp-action="Update" method="post">
+                <input type="hidden" asp-for="Id"/>
+                <input type="hidden" asp-for="ProductId"/>
+
+                <div class="form-group">
+                    <label asp-for="Size"></label>
+                    <input asp-for="Size" class="form-control"/>
+                </div>
+                <br/>
+
+                <div class="form-group">
+                    <label asp-for="RomCount"></label>
+                    <input asp-for="RomCount" class="form-control" required/>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label asp-for="BathCount"></label>
+                    <input asp-for="BathCount" class="form-control"/>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label asp-for="BadromCount"></label>
+                    <input asp-for="BadromCount" class="form-control" required/>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label asp-for="GarageSize"></label>
+                    <input asp-for="GarageSize" class="form-control"/>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label asp-for="Location"></label>
+                    <input asp-for="Location" class="form-control" required/>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label asp-for="BuildYear"></label>
+                    <input asp-for="BuildYear" class="form-control"/>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label asp-for="VideoUrl"></label>
+                    <input asp-for="VideoUrl" class="form-control" required/>
+                </div>
+                <br/>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Lagre</button>
+                </div>
+            </form>
         </div>
-        <br/>
- 
-        <div class="form-group">
-            <label asp-for="RomCount"></label>
-            <input asp-for="RomCount" class="form-control" required />
-        </div>
-   <br/>
-        <div class="form-group">
-            <label asp-for="BathCount"></label>
-            <input asp-for="BathCount" class="form-control" />
-        </div>
-   <br/>
-        <div class="form-group">
-            <label asp-for="BadromCount"></label>
-            <input asp-for="BadromCount" class="form-control" required />
-        </div>
-   <br/>
-        <div class="form-group">
-            <label asp-for="GarageSize"></label>
-            <input asp-for="GarageSize" class="form-control" />
-        </div>
-   <br/>
-        <div class="form-group">
-            <label asp-for="Location"></label>
-            <input asp-for="Location" class="form-control" required />
-        </div>
-   <br/>
-        <div class="form-group">
-            <label asp-for="BuildYear"></label>
-            <input asp-for="BuildYear" class="form-control" />
-        </div>
-   <br/>
-        <div class="form-group">
-            <label asp-for="VideoUrl"></label>
-            <input asp-for="VideoUrl" class="form-control" required />
-        </div>
-   <br/>
-        <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> Update</button>
-    </form>
+    </div>
 </div>
+</body>
+</html>

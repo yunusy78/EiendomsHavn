@@ -9,7 +9,6 @@ public class UpdateCategoryDto
     
     public string CategoryDescription { get; set; }
     
-    public string ImageUrl { get; set; }
     
     public bool Status { get; set; }
     

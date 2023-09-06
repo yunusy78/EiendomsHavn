@@ -39,7 +39,6 @@ public class CategoryControllerTests
             CategoryId = Guid.NewGuid(),
             Name = "Test Category",
             CategoryDescription = "null",
-            ImageUrl = "Test Image Url",
             Status = true
             
         };
@@ -64,7 +63,6 @@ public class CategoryControllerTests
             CategoryId = Guid.NewGuid(),
             Name = "Test Category",
             CategoryDescription = "Test Description",
-            ImageUrl = "Test Image Url",
             Status = true
         };
 
@@ -109,7 +107,6 @@ public class CategoryControllerTests
             CategoryId = categoryId,
             Name = "Test Category",
             CategoryDescription = "Test Description",
-            ImageUrl = "Test Image Url",
             Status = true
         };
 

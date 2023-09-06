@@ -11,8 +11,6 @@ public class CreateCategoryDto
   
     public string CategoryDescription { get; set; }
     
-    public string ImageUrl { get; set; }
-    
     public DateTime CreatedAt { get; set; }
    
     public bool Status { get; set; }

@@ -53,6 +53,7 @@
       <Folder Include="Areas\Admin\Data\" />
       <Folder Include="Areas\Admin\Pages\" />
       <Folder Include="Pages\Components\" />
+      <Folder Include="wwwroot\ImageFile\Employee\" />
       <Folder Include="wwwroot\ImageFile\Product\" />
     </ItemGroup>
 
