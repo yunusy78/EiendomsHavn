@@ -92,9 +92,7 @@ namespace API.Controllers
             return Ok("Logout successful");
         }
         
-      
-
-
+        
 
     }
 }

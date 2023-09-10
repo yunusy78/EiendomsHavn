@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Net;
+using System.Net.Http.Headers;
 using API.DTOs.EmployeeDtos;
 using EindomsHavn.DTOs.CategoryDtos;
 using EindomsHavnAPI.DTOs.NewsletterDtos;
@@ -48,6 +49,16 @@ public class DashboardController : Controller
 
             
             return View(contacts);
+        }
+        
+        if (response.Result.StatusCode == HttpStatusCode.Unauthorized)
+        {
+            return RedirectToAction("Unauthorized", "ErrorPage", new {code = 401, area = ""});
+        }
+        
+        if (response.Result.StatusCode == HttpStatusCode.Forbidden)
+        {
+            return RedirectToAction("Unauthorized", "ErrorPage", new {code = 403, area = ""});
         }
 
         return RedirectToAction("Index", "Default" , new {area = ""});

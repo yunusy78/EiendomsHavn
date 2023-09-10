@@ -1,4 +1,6 @@
 ﻿using System.Data;
+using System.Security.Cryptography;
+using API.Controllers;
 using Dapper;
 using EindomsHavnAPI.Data.Context;
 using EindomsHavnAPI.DTOs.ApplicationUserDto;
@@ -105,7 +107,55 @@ public class ApplicationUserRepository : IApplicationUserRepository
         }
     }
 
+    public Task<bool> DeleteUser(Guid id)
+    {
+        throw new NotImplementedException();
+    }
 
+    
+    public async Task<ForgotPasswordDto> FindByEmail(string email)
+    {
+        var sql = "SELECT * FROM Users WHERE Email = @Email";
+        using (var connection = _context.CreateConnection())
+        {
+            var user = await connection.QuerySingleOrDefaultAsync<ForgotPasswordDto>(sql, new { Email = email });
+            return user;
+        }
+    }
+    
+    public async Task<ForgotPasswordDto> FindByEmailFromForgetPassword(string resetToken)
+    {
+        var sql = "SELECT * FROM ForgotPasswords WHERE ResetToken = @ResetToken";
+        using (var connection = _context.CreateConnection())
+        {
+            var user = await connection.QuerySingleOrDefaultAsync<ForgotPasswordDto>(sql, new { ResetToken = resetToken });
+            return user;
+        }
+    }
 
+    public Task<bool> UpdateUser(ForgotPasswordDto dto)
+    {
+        var sql = "UPDATE Users SET PasswordHash = @PasswordHash WHERE Email = @Email";
+        using (var connection = _context.CreateConnection())
+        {
+            var affectedRows = connection.Execute(sql, dto);
+            return Task.FromResult(affectedRows > 0);
+        }
+        
+    }
+    
+    public async Task<bool> CreateForgotPasswordRecord(ForgotPasswordDto dto)
+    {
+        var sql = @"INSERT INTO ForgotPasswords (UserId, Email, PasswordHash, ResetToken, ResetTokenExpiry)
+                VALUES (@Id, @Email, @PasswordHash, @ResetToken, @ResetTokenExpiry)";
+
+        using (var connection = _context.CreateConnection())
+        {
+            var affectedRows = await connection.ExecuteAsync(sql, dto);
+            return affectedRows > 0;
+        }
+    }
+
+    
 
 }
