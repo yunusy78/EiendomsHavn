@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using EindomsHavnAPI.DTOs.NewsletterDtos;
 using EindomsHavnAPI.Repositories.NewsletterRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class NewsletterController : ControllerBase
@@ -21,6 +23,7 @@ namespace API.Controllers
         }
         
         [HttpGet]
+       
         public async Task<IActionResult> GetAllNewslettersAsync()
         {
             var newsletters = await _newsletterRepository.GetAllNewslettersAsync();
@@ -30,7 +33,7 @@ namespace API.Controllers
         
         
         [HttpPost]
-        
+        [AllowAnonymous]
         public async Task<IActionResult> CreateNewsletterAsync(CreateNewsletterDto newsletterDto)
         {
             if (!ModelState.IsValid)
@@ -64,6 +67,7 @@ namespace API.Controllers
         
         
         [HttpGet("{id}")]
+        [AllowAnonymous]
         
         public async Task<IActionResult> GetCategoryById(Guid id)
         {

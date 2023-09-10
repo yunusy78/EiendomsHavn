@@ -1,0 +1,81 @@
+﻿@model X.PagedList.IPagedList<EindomsHavnAPI.DTOs.ContactDtos.ResultContactDto>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<br/><br/>
+<h3 style="text-align: center">Kontaktliste</h3>
+<br/>
+<table class="table">
+    <thead style="text-align: center; background: #0dcaf0">
+   <tr>
+       <th>#</th>
+       <th>Id</th>
+       <th>Navn</th>
+       <th>E-Post</th>
+       <th>Melding</th>
+       <th>Dato</th>
+       <th>Status</th>
+       <th>Rediger</th>
+       <th>Slette</th>
+   </tr>
+    </thead>
+    <tbody>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <tr>
+            <td><strong>@(i + 1)</strong></td>
+            <td>@Model[i].Id</td>
+            <td>@Model[i].ContactName</td>
+            <td>@Model[i].Email</td>
+            <td>@Model[i].Message</td>
+            <td>
+                @(((DateTime)Model[i].CreatedAt).ToString("dd-MMM-yyyy"))
+            <td>
+                @if (Model[i].Status)
+                {
+                    <span class="text-success">Active</span>
+                }
+                else
+                {
+                    <span class="text-danger">Inactive</span>
+                }
+            </td>
+            <td>
+            <button type="button" class="btn btn-outline-warning" onclick="editCategory('@Model[i].Id')"> <i class="fa fa-edit"></i> Rediger</button>
+            </td>
+           <td>
+               <button type="submit" class="btn btn-outline-danger" onclick="return confirmDelete('@Model[i].Id')"><i class="fa fa-trash"></i> Slett</button>
+               </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div class="btn-group me-2" role="group" aria-label="First group">
+               
+    @for (var i = 1; i <= Model.PageCount; i++)
+    {
+        <button type="button" class="btn btn-primary @(i == Model.PageNumber ? "current" : "")" style="background-color: @(i == Model.PageNumber ? "#0dcaf0" : "White"); color: #0b0b0b" onclick="location.href='@Url.Action("Index", "Contact", new { area = "Admin", page = i })'">@i</button>
+
+    }
+               
+</div>
+<br/>
+<br/>
+<!-- Path: BlogWeb\Areas\Admin\Views\Category\Create.cshtml --> 
+<script>
+ function editCategory(categoryId) {
+       
+        window.location.href = "/Admin/Contact/Update/" + categoryId;
+    }
+    function confirmDelete(categoryId) {
+        var confirmMessage = "Are you sure you want to delete this category?";
+        if (confirm(confirmMessage)) {
+            window.location.href = "/Admin/Contact/Delete/" + categoryId;
+        }
+        return false;
+    }
+</script>

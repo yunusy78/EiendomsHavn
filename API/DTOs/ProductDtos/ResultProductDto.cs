@@ -26,6 +26,10 @@ public class ResultProductDto
     
     public Guid EmployeeId { get; set; }
     
+    public string EmployeeName { get; set; }
+    
+    public string Name { get; set; }
+    
     public bool Status { get; set; }
     
 } 

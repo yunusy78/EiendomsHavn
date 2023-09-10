@@ -1,10 +1,14 @@
-﻿<header id="site-header" class="fixed-top">
+﻿@using web.DTOs.ApplicationUserDto
+@using Azure.Core
+
+
+<header id="site-header" class="fixed-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg stroke px-0">
             
             <h1>
                 <a class="navbar-brand" href="/Default/Index">
-                     <img style="height: 90px; width: 150px;" src="~/evh3.png" class="img-fluid radius-image" alt="image">
+                    <img style="height: 90px; width: 150px;" src="~/evh3.png" class="img-fluid radius-image" alt="image">
                     
                 </a></h1>
             <!-- Hvis logoen er et bilde, aktiver dette
@@ -19,9 +23,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ml-lg-5 mr-auto">
-                      <li class="nav-item @@home__active">
-                      <a class="navbar-brand" href="/Default/Index"><span class="fa fa-home"></span> </a>
-                       </li>
+                    <li class="nav-item @@home__active">
+                        <a class="navbar-brand" href="/Default/Index"><span class="fa fa-home"></span> </a>
+                    </li>
                     <li class="nav-item @@home__active">
                         <a class="nav-link" href="/Default/Index">Hjem <span class="sr-only">(nåværende)</span></a>
                     </li>
@@ -43,6 +47,10 @@
                             <a class="dropdown-item active" href="/Contact/Index">Kontakt oss</a>
                         </div>
                     </li>
+                    <li class="nav-item @@listing__active">
+                        <a class="nav-link" href="/Admin/Dashboard/Index">Admin</a>
+                    </li>
+                    
                 </ul>
                 <div class="top-quote mt-lg-0">
                     <a href="#buytheme" class="btn btn-style btn-primary"><span class="fa fa-home"></span> Legg til annonse</a>
@@ -75,6 +83,107 @@
                 </nav>
             </div>
             <!-- //Bytt for lys og mørkt tema -->
+          
+            
+                <li class="nav-item" id="logoutLink">
+                    <a class="nav-link" href="/Logout/Index">Logg Ut</a>
+                </li>
+                
+                <li class="nav-item" id="loginLink">
+                    <a class="nav-link" href="/Login/Index">Logg Inn</a>
+                </li>
+
+            
+            
+         @*   <li class="nav-item dropdown active">
+                <a id="logoutLink" class="nav-link" href="/Logout/Index" style="display:none;">Logg Ut</a>
+                
+                
+            </li>
+            <li class="nav-item dropdown active">
+               <a id="loginLink" class="nav-link" href="/Login/Index" style="display:none;">Logg Inn</a>
+           </li>*@
         </nav>
     </div>
 </header>
+
+<script>
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+  
+  // jwtToken değerini al
+  var jwtToken = getCookie("JwtToken");
+  console.log("jwtToken:", jwtToken); // jwtToken'ı konsola yazdır
+  
+  // Oturum açık mı kontrol et
+  function isUserAuthenticated() {
+      var isAuthenticated = jwtToken !== null && jwtToken !== '';
+      console.log("isAuthenticated:", isAuthenticated); // isUserAuthenticated değerini konsola yazdır
+      return isAuthenticated;
+  }
+  
+  // Navbar bağlantılarını güncelle
+  function updateNavbarLinks() {
+      if (isUserAuthenticated()) {
+          // Kullanıcı giriş yapmışsa, navbar'da logout düğmesini göster
+          document.getElementById("logoutLink").style.display = "block"; // Logout linki görünür
+          document.getElementById("loginLink").style.display = "none"; // Login linki gizli
+      } else {
+          // Kullanıcı giriş yapmamışsa, giriş düğmesini göster
+          document.getElementById("logoutLink").style.display = "none"; // Logout linki gizli
+          document.getElementById("loginLink").style.display = "block"; // Login linki görünür
+      }
+  }
+  
+  // Sayfa yüklendiğinde navbar bağlantılarını güncelle
+  window.onload = function () {
+      updateNavbarLinks();
+      console.log("Navbar bağlantıları güncellendi.");
+  };
+  
+  // Sayfa yüklendiğinde çalışacak olan kod
+  window.onload = function() {
+      // Oturum durumunu kontrol etmek için checkAuthentication fonksiyonunu çağır
+      checkAuthentication();
+  };
+  
+  function checkAuthentication() {
+      fetch('/Login/IsAuthenticated')
+          .then(response => response.json())
+          .then(data => {
+              const logoutLink = document.getElementById('logoutLink');
+              const loginLink = document.getElementById('loginLink');
+               console.log("data:", data);
+              
+              if (data === true) {
+                  // Kullanıcı oturumu açıksa "Logg Ut" bağlantısını göster, "Logg Inn" bağlantısını gizle
+                  logoutLink.style.display = 'block';
+                  loginLink.style.display = 'none';
+                   console.log("data:", data);
+              } else {
+                  // Kullanıcı oturumu kapalıysa "Logg Ut" bağlantısını gizle, "Logg Inn" bağlantısını göster
+                  logoutLink.style.display = 'none';
+                  loginLink.style.display = 'block';
+                   console.log(data);
+              }
+          });
+  }
+
+
+</script>
+
+

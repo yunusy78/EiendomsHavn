@@ -6,11 +6,13 @@ using Business.ValidationRules;
 using EindomsHavnAPI.DTOs.CategoryDtos;
 using EindomsHavnAPI.Repositories.CategoryRepository;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EindomsHavnAPI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
@@ -24,14 +26,22 @@ namespace EindomsHavnAPI.Controllers
         
         
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllCategories()
         {
             var result = await _categoryRepository.GetAllCategoriesAsync();
             return Ok(result);
         }
         
-        [HttpPost]
         
+        [HttpGet("CategoriesAdmin")]
+        public async Task<IActionResult> GetAllCategoriesAdmin()
+        {
+            var result = await _categoryRepository.GetAllCategoriesAsync();
+            return Ok(result);
+        }
+        
+        [HttpPost]
         public async Task<IActionResult> CreateCategory(CreateCategoryDto categoryDto)
         {
             CategoryValidator validator = new CategoryValidator();
@@ -68,6 +78,7 @@ namespace EindomsHavnAPI.Controllers
         }
         
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetCategoryById(Guid id)
         {
             var result = await _categoryRepository.GetCategoryByIdAsync(id);

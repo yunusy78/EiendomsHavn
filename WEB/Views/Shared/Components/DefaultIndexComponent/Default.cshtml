@@ -7,40 +7,30 @@
                     <h2>Finn en eiendom i dag</h2>
                     <div class="most-searches">
                         <h4>Mest søkte</h4>
-                        <ul>
-                            <li><a href="#link">Villa</a></li>
-                            <li><a href="#link">Leilighet</a></li>
-                            <li><a href="#link">Privat hus</a></li>
+                        <ul> 
+                           <li><a href="/ProductDetails/Index?search2=Enebolig">Enebolig</a></li>
+                           <li><a href="/ProductDetails/Index?search2=Leilighet">Leilighet</a></li>
+                           <li><a href="/ProductDetails/Index?search2=Hybel">Hybel</a></li>
                         </ul>
                     </div>
-                    <form action="#" class="w3l-cover-3-gd" method="GET">
-                        <input type="search" name="text" placeholder="Skriv inn søkeord" required>
+                    <form action="/ProductDetails/Index" class="w3l-cover-3-gd" method="GET">
+                        <input type="search" name="search2" placeholder="Søk etter eiendom" >
                         <span class="input-group-btn">
-                            <select class="btn btn-default" name="ext" required>
-                                <option selected="">Eiendomstype</option>
-                                <option>Villa</option>
-                                <option>Leilighet</option>
-                                <option>Privat hus</option>
-                                <option>Bygning</option>
-                                <option>Butikk</option>
-                                <option>Sosial bolig</option>
-                                <option>Rekkehus</option>
+                            <select class="btn btn-default" name="type" >
+                                <option value="">Eindomstype</option>
+                                @foreach (var item in ViewBag.Categories)
+                                {
+                                    <option value="@item.Text">@item.Text</option>
+                                }
                             </select>
                         </span>
                         <span class="input-group-btn">
-                            <select class="btn btn-default" name="ext" required>
-                                <option selected="">Velg by</option>
-                                <option>Oslo</option>
-                                <option>Bergen</option>
-                                <option>Trondheim</option>
-                                <option>Stavanger</option>
-                                <option>Tromsø</option>
-                                <option>Drammen</option>
-                                <option>Fredrikstad</option>
-                                <option>Kristiansand</option>
-                                <option>Sandnes</option>
-                                <option>Skien</option>
-                                <!-- Daha fazla şehir eklenebilir -->
+                            <select name="search" class="btn btn-default">
+                                <option value=""> Velg By</option>
+                                @foreach (var item in ViewBag.Cities)
+                                {
+                                    <option value="@item.Text">@item.Text</option>
+                                }
                             </select>
                         </span>
                         <button type="submit" class="btn-primary">Søk</button>

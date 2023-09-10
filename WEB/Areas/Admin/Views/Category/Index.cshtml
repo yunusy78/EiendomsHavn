@@ -7,20 +7,21 @@
     Layout = "_AdminLayout";
 }
 <br/><br/><br/>
-<h2 style="text-align: center">Category Index</h2>
+<h3 style="text-align: center">Kategoriliste</h3>
 <br/>
 <table class="table">
     <thead style="text-align: center; background: #0dcaf0">
     <tr>
         <th>#</th>
         <th>Id</th>
-        <th>CategoryName</th>
-        <th>Description</th>
-        <th>CreatedAt</th>
+        <th>KategoriNavn</th>
+        <th>Beskrivelse</th>
+        <th>OpprettetDato</th>
         <th>Status</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th>Rediger</th>
+        <th>Slett</th>
     </tr>
+
     </thead>
     <tbody>
     @for (int i = 0; i < Model.Count; i++)
@@ -43,10 +44,10 @@
                 }
             </td>
             <td>
-            <button type="button" class="btn btn-primary" onclick="editCategory('@Model[i].CategoryId')"> <i class="fa fa-edit"></i> Edit</button>
+            <button type="button" class="btn btn-outline-warning" onclick="editCategory('@Model[i].CategoryId')"> <i class="fa fa-edit"></i> Rediger</button>
             </td>
            <td>
-               <button type="submit" class="btn btn-danger" onclick="return confirmDelete('@Model[i].CategoryId')"><i class="fa fa-trash"></i> Delete</button>
+               <button type="submit" class="btn btn-outline-danger" onclick="return confirmDelete('@Model[i].CategoryId')"><i class="fa fa-trash"></i> Slett</button>
                </td>
         </tr>
     }
@@ -65,8 +66,8 @@
 <br/>
 <br/>
 <div>
-<a href="/Admin/Category/Create" class="btn btn-primary">
-    <i class="fa fa-plus"></i> Add New Category
+<a href="/Admin/Category/Create" class="btn btn-outline-primary">
+    <i class="fa fa-plus"></i> Legg til Ny Kategori
 </a>
 </div>
 <!-- Path: BlogWeb\Areas\Admin\Views\Category\Create.cshtml --> 

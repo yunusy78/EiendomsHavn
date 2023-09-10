@@ -6,6 +6,7 @@ using EindomsHavnAPI.DTOs.CategoryDtos;
 using EindomsHavnAPI.Repositories.AboutRepository;
 using EindomsHavnAPI.Repositories.CategoryRepository;
 using EindomsHavnAPI.Repositories.CityRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

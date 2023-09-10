@@ -1,0 +1,55 @@
+﻿@model EindomsHavnAPI.DTOs.NewsletterDtos.UpdateNewsletterDto
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+
+<html>
+<head>
+    <title>Legg til nytt produkt</title>
+    <style>
+        .custom-form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h3 class="text-center">Oppdater Contact</h3>
+            <form asp-controller="Newsletter" asp-action="Update" asp-area="Admin" method="post" >
+                <input asp-for="Id" type="hidden" class="form-control">
+                <div class="form-group">
+                    <label>E-Post</label>
+                    <input asp-for="Email" class="form-control" placeholder="E-Post" required>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="Status">Status:</label>
+                    <div class="form-check">
+                        <input asp-for="Status" class="form-check-input" type="radio" id="statusTrue" value="true">
+                        <label class="form-check-label" for="statusTrue">True</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="Status" class="form-check-input" type="radio" id="statusFalse" value="false">
+                        <label class="form-check-label" for="statusFalse">False</label>
+                    </div>
+                </div>
+                <input asp-for="CreatedAt" type="hidden" class="form-control">
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Lagre</button>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

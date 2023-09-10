@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net.Http.Headers;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WEB.DTOs.AboutDtos;
@@ -17,8 +18,10 @@ public class EmployeeController : Controller
     // GET
     public IActionResult Index(int page=1)
     {
-        var client = _httpClientFactory.CreateClient();
-        var response = client.GetAsync("http://localhost:5076/api/Employee").Result;
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
+        var response = client.GetAsync("http://localhost:5076/api/Employee/EmployeeAdmin").Result;
         if (response.IsSuccessStatusCode)
         {
             var result = response.Content.ReadAsStringAsync().Result;
@@ -50,7 +53,9 @@ public class EmployeeController : Controller
             dto.EmployeeImageUrl = "default.png ";
         }
         dto.EmployeeStatus = true;
-        var client = _httpClientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var json = JsonConvert.SerializeObject(dto);
         var data = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await client.PostAsync("http://localhost:5076/api/Employee", data);
@@ -63,7 +68,9 @@ public class EmployeeController : Controller
 
     public async Task<IActionResult> Delete(Guid id)
     {
-        var client = _httpClientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var response = await client.DeleteAsync("http://localhost:5076/api/Employee/" + id);
         if (response.IsSuccessStatusCode)
         {
@@ -74,7 +81,9 @@ public class EmployeeController : Controller
     
     public async Task<IActionResult> Update(Guid id)
     {
-        var client = _httpClientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var response = await client.GetAsync($"http://localhost:5076/api/Employee/{id}");
         if (response.IsSuccessStatusCode)
         {
@@ -101,7 +110,9 @@ public class EmployeeController : Controller
         {
             dto.EmployeeImageUrl = dto.EmployeeImageUrl;
         }
-        var client = _httpClientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var json = JsonConvert.SerializeObject(dto);
         var data = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await client.PutAsync("http://localhost:5076/api/Employee", data);

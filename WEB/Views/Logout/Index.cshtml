@@ -1,0 +1,23 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_DefaultLayout";
+}
+
+<div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="index.html" class="">
+                                <h3 class="text-primary"><i class="fa fa-home"></i>Eindomshavn</h3>
+                            </a>
+                            <h3>Logout</h3>
+                        </div>
+                        <form asp-controller="Logout" asp-action="Logout" asp-area="" method="post">
+                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+

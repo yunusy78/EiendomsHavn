@@ -1,4 +1,5 @@
-﻿using EiendomsHavn.DTOs.ProductDtos;
+﻿using System.Net.Http.Headers;
+using EiendomsHavn.DTOs.ProductDtos;
 using EindomsHavn.DTOs.ProductDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -9,16 +10,18 @@ namespace WEB.Areas.Admin.Controllers;
 [Area("Admin")]
 public class ProductDetailsController : Controller
 {
-    private readonly IHttpClientFactory _clientFactory;
+    private readonly IHttpClientFactory _httpClientFactory;
     
     public ProductDetailsController(IHttpClientFactory clientFactory)
     {
-        _clientFactory = clientFactory;
+        _httpClientFactory = clientFactory;
     }
     // GET
     public async Task<IActionResult> Index(int page=1)
     {
-        var client = _clientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var response = await client.GetAsync("http://localhost:5076/api/ProductDetails/GetAllProductsDetailsWithProduct");
         if (response.IsSuccessStatusCode)
         {
@@ -32,7 +35,9 @@ public class ProductDetailsController : Controller
     
     public async Task<IActionResult> Update(Guid id)
     {
-        var client = _clientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var response = await client.GetAsync("http://localhost:5076/api/ProductDetails/GetProductDetailsWithId?id=" + id);
         if (response.IsSuccessStatusCode)
         {
@@ -58,7 +63,9 @@ public class ProductDetailsController : Controller
 [HttpPost]
 public IActionResult Update(CreateProductDetailsDto productDto)
 {
-    var client = _clientFactory.CreateClient("API");
+    var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+    var client =  _httpClientFactory.CreateClient("API");
+    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
     var response = client.PostAsJsonAsync("http://localhost:5076/api/ProductDetails", productDto).Result;
         
     if (response.IsSuccessStatusCode)

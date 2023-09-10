@@ -17,7 +17,8 @@ public class ProductRepository: IProductRepository
     
     public async Task<List<ResultProductDto>> GetAllProductsAsync()
     {
-        string sql = "SELECT * FROM Products";
+        string sql = "SELECT * FROM Products INNER JOIN Categories ON Products.CategoryId = Categories.CategoryId " +
+                     "INNER JOIN Employee on Products.EmployeeId = Employee.EmployeeId";
         using (var connection = _context.CreateConnection())
         {
             var products = await connection.QueryAsync<ResultProductDto>(sql);

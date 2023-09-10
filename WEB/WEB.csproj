@@ -21,7 +21,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.10" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0"/>
-        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.0" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
         <PackageReference Include="QRCoder" Version="1.4.3" />
         <PackageReference Include="X.PagedList" Version="9.0.0-prerelease" />
         <PackageReference Include="X.PagedList.Mvc.Core" Version="9.0.0-prerelease" />
@@ -55,6 +55,66 @@
       <Folder Include="Pages\Components\" />
       <Folder Include="wwwroot\ImageFile\Employee\" />
       <Folder Include="wwwroot\ImageFile\Product\" />
+    </ItemGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\API\API.csproj" />
+    </ItemGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Login\Index.cshtml" />
+    </ItemGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Login\Index.cshtml" />
     </ItemGroup>
 
 </Project>

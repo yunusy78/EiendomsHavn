@@ -7,11 +7,13 @@ using EindomsHavnAPI.DTOs.CategoryDtos;
 using EindomsHavnAPI.Repositories.AboutRepository;
 using EindomsHavnAPI.Repositories.CategoryRepository;
 using EindomsHavnAPI.Repositories.EmployeeRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EindomsHavnAPI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase
@@ -26,13 +28,23 @@ namespace EindomsHavnAPI.Controllers
        
 
        [HttpGet]
+       [AllowAnonymous]
         public async Task<IActionResult> GetAllAbout()
         {
             var result = await _employeeRepository.GetAllEmployeeAsync();
             return Ok(result);
         }
         
+        [HttpGet("EmployeeAdmin")]
+     
+        public async Task<IActionResult> GetAllEmployee()
+        {
+            var result = await _employeeRepository.GetAllEmployeeAsync();
+            return Ok(result);
+        }
+        
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAboutById(Guid id)
         {
             var result = await _employeeRepository.GetEmployeeByIdAsync(id);

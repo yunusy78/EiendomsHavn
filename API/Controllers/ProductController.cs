@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using EindomsHavnAPI.DTOs.ProductDtos;
 using EindomsHavnAPI.Repositories.ProductRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EindomsHavnAPI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -21,6 +23,17 @@ namespace EindomsHavnAPI.Controllers
         }
         
         [HttpGet]
+        [Route("ProductsAdmin")]
+     
+        public async Task<IActionResult> GetAllProductsAdminAsync()
+        {
+            var products = await _productRepository.GetAllProductsAsync();
+            return Ok(products);
+            
+        }
+        
+        [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllProductsAsync()
         {
             var products = await _productRepository.GetAllProductsAsync();
@@ -29,6 +42,7 @@ namespace EindomsHavnAPI.Controllers
         }
         
         [HttpGet]
+        [AllowAnonymous]
         [Route("GetAllProductsWithCategoryAndAddress")]
         public async Task<IActionResult> GetAllProductsWithCategoryAndAddressAsync()
         {
@@ -73,6 +87,7 @@ namespace EindomsHavnAPI.Controllers
         }
         
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetProductByIdAsync(Guid id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);

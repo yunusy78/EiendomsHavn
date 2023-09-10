@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pie Chart Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+<!-- Grafik için bir yer belirliyoruz -->
+<div style="float: left; width: 50%; height: 600px;">
+    <div id="chartDiv1" style="width: 100%; height: 100%;"></div>
+</div>
+    <div style="float: left; width: 50%; height: 600px;">
+        <div id="chartDiv2" style="width: 100%; height: 100%;"></div>
+    </div>
+    <div style="clear: both;"></div>
+
+<div style="float: left; width: 50%; height: 600px;">
+        <div id="chartDiv3" style="width: 100%; height: 100%;"></div>
+    </div>
+    <div style="clear: both;"></div>
+
+<script type="text/javascript">
+
+        google.charts.load('current', {'packages' : ['corechart'] });
+        google.charts.setOnLoadCallback(DrawPieChart1);
+
+        function DrawPieChart1(){
+            // AJAX ile verileri alıyoruz (örnek olarak bir dizi kullanıyoruz)
+            $.ajax({
+                 type: "GET",
+                 url: "/Admin/Chart/CategoryChart/",
+                 success: function(chartsdata) {
+                   var jsonData = chartsdata.jsonlist;
+                     console.log(jsonData);
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'name');
+            data.addColumn('number','count');
+
+           
+            for (var i = 0; i < jsonData.length; i++){
+                data.addRow([jsonData[i].name, jsonData[i].count]);
+            }
+
+            var options = {
+                title: "Kategori Chart",
+                position: "top",
+                fontSize: "16px"
+            };
+
+         
+            var chart = new google.visualization.PieChart(document.getElementById('chartDiv1'));
+            chart.draw(data, options);
+        }
+    });
+}
+ google.charts.load('current', {'packages' : ['corechart'] });
+        google.charts.setOnLoadCallback(DrawPieChart2);
+
+        function DrawPieChart2(){
+            // AJAX ile verileri alıyoruz (örnek olarak bir dizi kullanıyoruz)
+            $.ajax({
+                 type: "GET",
+                 url: "/Admin/Chart/CityChart/",
+                 success: function(chartsdata) {
+                   var jsonData = chartsdata.jsonlist;
+                     console.log(jsonData);
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'name');
+            data.addColumn('number','count');
+
+           
+            for (var i = 0; i < jsonData.length; i++){
+                data.addRow([jsonData[i].name, jsonData[i].count]);
+            }
+
+            var options = {
+                title: "By Chart",
+                position: "top",
+                fontSize: "16px"
+            };
+
+         
+            var chart = new google.visualization.PieChart(document.getElementById('chartDiv2'));
+            chart.draw(data, options);
+        }
+    });
+}
+
+google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.setOnLoadCallback(drawChart3);
+
+function drawChart3() {
+    $.ajax({
+        url: '/Admin/Chart/EmployeeChart/', // Değişen URL
+        type: 'GET',
+        dataType: 'json',
+        success: function(chartsdata) {
+                           var jsonData = chartsdata.jsonlist;
+                             console.log(jsonData);      
+            var chartData = [['Name', 'Count', { role: 'style' }]];
+            for (var i = 0; i < jsonData.length; i++) {
+                var randomColor = getRandomColor();
+                chartData.push([jsonData[i].name, jsonData[i].count, randomColor]);
+            }
+
+            var dataTable = google.visualization.arrayToDataTable(chartData);
+
+            var options = {
+                title: 'Ansatte Chart',
+                hAxis: { title: 'Jobs', titleTextStyle: { color: '#333' } },
+                vAxis: { minValue: 0 }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chartDiv3'));
+            chart.draw(dataTable, options);
+        }
+    });
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+    </script>
+</body>
+</html>
+

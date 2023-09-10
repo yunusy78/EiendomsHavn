@@ -325,3 +325,9 @@ C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\Test
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1\obj\Debug\net7.0\TestProject1.genruntimeconfig.cache
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1\obj\Debug\net7.0\ref\TestProject1.dll
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1\bin\Debug\net7.0\FluentValidation.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1\bin\Debug\net7.0\Scrutor.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\EiendomsHavn\TestProject1\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

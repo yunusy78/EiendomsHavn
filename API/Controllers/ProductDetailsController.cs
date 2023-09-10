@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using EindomsHavnAPI.DTOs.ProductDtos;
 using EindomsHavnAPI.Repositories.ProductRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EindomsHavnAPI.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ProductDetailsController : ControllerBase
@@ -57,6 +59,7 @@ namespace EindomsHavnAPI.Controllers
         }
         
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateProductAsync([FromBody] CreateProductDetailsDto productDto)
         {
             if (!ModelState.IsValid)

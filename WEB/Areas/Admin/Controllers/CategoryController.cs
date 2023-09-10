@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net.Http.Headers;
+using System.Text;
 using EiendomsHavn.DTOs.CategoryDtos;
 using EindomsHavn.DTOs.CategoryDtos;
 using Microsoft.AspNetCore.Mvc;
@@ -19,8 +20,10 @@ public class CategoryController : Controller
     // GET
     public async Task<IActionResult> Index( int page=1)
     {
-        var client = _httpClientFactory.CreateClient();
-        var response = client.GetAsync("http://localhost:5076/api/Category").Result;
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
+        var response = client.GetAsync("http://localhost:5076/api/Category/CategoriesAdmin").Result;
         if (response.IsSuccessStatusCode)
         {
             var result = await response.Content.ReadAsStringAsync();
@@ -40,7 +43,9 @@ public class CategoryController : Controller
     {
         dto.Status = true;
         dto.CreatedAt = DateTime.Now;
-        var client = _httpClientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var json = JsonConvert.SerializeObject(dto);
         var data = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await client.PostAsync("http://localhost:5076/api/Category", data);
@@ -53,7 +58,9 @@ public class CategoryController : Controller
     
     public async Task<IActionResult> Delete(Guid id)
     {
-        var client = _httpClientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var response = await client.DeleteAsync($"http://localhost:5076/api/Category/{id}");
         if (response.IsSuccessStatusCode)
         {
@@ -67,7 +74,9 @@ public class CategoryController : Controller
     
     public async Task<IActionResult> Update(Guid id)
     {
-        var client = _httpClientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var response = await client.GetAsync($"http://localhost:5076/api/Category/{id}");
         if (response.IsSuccessStatusCode)
         {
@@ -81,7 +90,9 @@ public class CategoryController : Controller
     [HttpPost]
     public async Task<IActionResult> Update(UpdateCategoryDto dto)
     {
-        var client = _httpClientFactory.CreateClient();
+        var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+        var client =  _httpClientFactory.CreateClient("API");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         var json = JsonConvert.SerializeObject(dto);
         var data = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await client.PutAsync("http://localhost:5076/api/Category", data);
