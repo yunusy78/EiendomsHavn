@@ -13227,7 +13227,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yunus\\.nuget\\packages\\": {}
+    "C:\\Users\\yunus\\.nuget\\packages\\": {},
+    "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -13238,15 +13239,22 @@
       "packagesPath": "C:\\Users\\yunus\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\EiendomsHavn\\WEB\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages"
+      ],
       "configFilePaths": [
         "C:\\Users\\yunus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13333,7 +13341,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

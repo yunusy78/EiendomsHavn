@@ -119,6 +119,25 @@ namespace YourWebAppNamespace.Controllers
             return Ok(isAuthenticated);
         }
         
+        [HttpGet]
+        public IActionResult IsAdmin()
+        {
+            var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+            var client =  _clientFactory.CreateClient("API");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
+            var response = client.GetAsync("http://localhost:5076/api/Category/CategoriesAdmin").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                bool isAdmin = true;
+                return Ok(isAdmin);
+            }
+            else
+            {
+                bool isAdmin = false;
+                return Ok(isAdmin);
+            }
+           
+        }
         
 
     }
