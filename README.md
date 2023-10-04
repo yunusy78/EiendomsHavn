@@ -66,5 +66,8 @@ To set up this project locally, follow these steps:
 ## License
 
 This project is licensed under the [License Type] license. See the [License File](LICENSE) for more details.
-![Proje Görseli](link/to/your/project/image.png)
+
+## Image
+
+![Proje Görseli](WEB/wwwroot/Eindomshavn/1.png)
 
