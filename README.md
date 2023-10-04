@@ -78,3 +78,10 @@ This project is licensed under the [License Type] license. See the [License File
 ![Proje Görseli](WEB/wwwroot/Eindomshavn/4.png)
 
 ![Proje Görseli](WEB/wwwroot/Eindomshavn/5.png)
+
+![Proje Görseli](WEB/wwwroot/Eindomshavn/6.png)
+
+![Proje Görseli](WEB/wwwroot/Eindomshavn/7.png)
+
+![Proje Görseli](WEB/wwwroot/Eindomshavn/8.png)
+
